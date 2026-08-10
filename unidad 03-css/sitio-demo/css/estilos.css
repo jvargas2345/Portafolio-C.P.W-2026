@@ -1,29 +1,94 @@
 /*cssestilos.css*/
 /*resetas basicos*/
 
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    /*esta regla elimina los margenes y el relleno predeterminados de todos los elementos y establece el modelo 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*esta regla elimina los margenes y el relleno predeterminados de todos los elementos y establece el modelo 
     de caja para incluir el relleno y el borde en el ancho y alto del elemento */
+}
 
+body {
+  font-size: 1rem;
+  line-height: 1, 6;
+  font-family: arialm sans-serif;
+  color: #5e2121;
+  background-color: #706363;
+  background-color: #fbf8f8;
+
+  /*Esta regla define la fuente y el color del texto en el cuerpo del documento*/
 }
-body{
-    font-family: Arial,sans-serif;
-    color:#d48787;
-    background-color:rgb(238, 240, 220)
-    /*Esta regla define la fuente y el color del texto en el cuerpo del documento*/
+
+h1 {
+  color: #fff;
+  text-align: center;
 }
-h2{
-    color: #171717;
-    font-size: 32px;
-    text-align: center;
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
+
 /*esta regla define la fuente y el color del texto */
-h1{
-    color: #f28282;
-    font-size: 32px;
-    text-align: center;
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
 
+h3 {
+  font-size: 1, 5rem;
+  font-weight: 600;
+}
+
+p{
+  font-size: 1rem;
+  font-weight: 400;
+}
+header{
+    background-color: rgba(33, 4, 82, 0.874);
+    color: white;
+}
+footer{
+    background-color: azure;
+    padding:28px;
+    margin-top: 32px;
+}
+h1, h3{
+    color: chartreuse;
+}
+
+main p {
+  max-width: 70ch;
+}
+
+main a {
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+blockquote{
+    font-style: italic;
+    color: rgba(85, 238, 126, 0.333);
+}
+
+header nav a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9;
+
+}
+
+.destacado {
+  background-color: #fff3cd;
+  padding: 10px; /*Aplica con las manillas del reloj: arriba - derecha - abajo -izquierda*/
+}
+
+html {
+  font-size: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
