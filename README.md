@@ -132,7 +132,7 @@ Proyecto propio construido de forma autónoma.
 | :----: | :------------------------- | :---------- | :---------------: | :--------------: |
 |  S11   | Introducción a CSS         | Aprendi a crear estilos basicos en css | [ver](./unidad%2003-css/sitio-demo/index.html) | [ver](recursos/S11%20Introduccion%20a%20css.png) |
 |  S12   | Selectores y pseudo-clases |             | [ver](unidad-03/) | [ver](recursos/) |
-|  S13   | Tipografía y color         |             | [ver](unidad-03/) | [ver](recursos/) |
+|  S13   | Tipografía y color         |Aprendi a realizar tipografias y color fondos| [ver](./unidad%2003-css/sitio-demo/index.html) | [ver](recursos/S13%20Tipografia%20y%20colores.png) |
 |  S14   | Modelo de cajas            |             | [ver](unidad-03/) | [ver](recursos/) |
 |  S15   | Display y posicionamiento  |             | [ver](unidad-03/) | [ver](recursos/) |
 |  S16   | Flexbox                    |             | [ver](unidad-03/) | [ver](recursos/) |
