@@ -110,6 +110,16 @@ header nav ul{
     list-style-type: none;
 }/*Quitar la viñeta y el subrayado*/
 /*Aplicar estilos a clases*/
+
+
+
+header ul li{
+list-style: none;
+}
+header nav li{
+    display: inline-block;
+}
+
 .destacado {
     background-color: #fff3cd;
     padding: 10px 20px; /*aplica com las manillas del reloj: ariba - derecha - abajo - izquierda*/
