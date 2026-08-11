@@ -10,6 +10,10 @@ html{
     padding: 0;
     box-sizing: border-box;
 }/*esta regla elimina los márgenes y el relleno predeterminados de todos los elementos y establece el modelo de caja para incluir el relleno y el borde en el ancho y alto del elemento*/
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
 body {
     font-size: 1rem;
     line-height: 1.6;
@@ -103,6 +107,7 @@ header nav a {
     text-decoration: none;
     display: inline-block;
     padding: 10px 15px;
+    margin-right: 15px;
 
 
 }
@@ -110,13 +115,48 @@ header nav ul{
     list-style-type: none;
 }/*Quitar la viñeta y el subrayado*/
 /*Aplicar estilos a clases*/
+
+
+
+header ul li{
+list-style: none;
+}
+
+nav li{
+    margin-right: 15px;
+
+
+}
+
+header nav li{
+    display: inline-block;
+}
+
+
+
 .destacado {
     background-color: #fff3cd;
     padding: 10px 20px; /*aplica com las manillas del reloj: ariba - derecha - abajo - izquierda*/
 
 }
 
+::selection{
+    background-color: #1f4e79;
+    color: white;
+}
+/*Los 5 valores de position 
+static: valor por omision
+relative: se desplaza desde su propia posision, conserva su propia pocision y los elementos vecinos no se mueven
+absolute: Se ubica respecto al ancestro mas cercano.
+fixed: se ubica respecto  a la ventana. No se mieve al desplazarse.
+sticky:Fluye normal hasta llegar a umbral y entonces se pega*/
 
+/*Patrones para este caso*/
+.figura-destacada{
+    
+
+
+}
 /*Aplicar estilos a identificadores o IDs*/
 #inicio {
     background-image: url(../Recursos/imagen\ menu.png);
