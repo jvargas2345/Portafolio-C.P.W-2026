@@ -18,6 +18,22 @@ body {
     background-color: #fcfcfc;
 
 }/*esta regla define la fuente y el color del texto en el cuerpo del documento*/
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    /*El 0 aplica a la parte vertical y horizontal 
+    el auto; reparte el espacio sobrante  */
+}
+
+
+
+main{
+    max-width: 1000px;
+    margin: auto;
+    /*0 aplica a la parte vertical y horizontal
+    el auto: reporte el pacion sobrante por igual a ambos lados
+    lo centra en un elemento con ancho listado*/
+}
 h1{
     color: #fff;
     text-align: center;
@@ -37,9 +53,10 @@ h3 {
 p {
     font-size: 1rem;
     font-weight: 400;
+    margin-bottom: 16px;
 }
 
-header {
+header{
     background-color: #1f4e79;
     color: white;
 }
@@ -57,7 +74,12 @@ footer{
 
 h2, h3 {
     color: #1f4e79;
+    margin-bottom: 12px;
 }
+p{
+    margin-bottom: 16px;
+}
+
 main p {
     max-width: 70ch;
 }/*ch es el ancho del carater cero de la fuenete en uso. el valor 70 marca el rango
@@ -79,11 +101,14 @@ header nav a {
     letter-spacing: 1px;
     font-size: 0.9rem;
     text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px;
+
 
 }
-header ul li {
+header nav ul{
     list-style-type: none;
-}
+}/*Quitar la viñeta y el subrayado*/
 /*Aplicar estilos a clases*/
 .destacado {
     background-color: #fff3cd;
@@ -149,12 +174,62 @@ padding-left: 10px aplica izquierda*/
 
 /*Aplica a la tabla horario.html*/
 
+
+
 th,td{
     padding: 10px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+thead th{
+    background-color: #1f4e79;
+    color: white;
+}
+
+tfoot td{
+    padding: 12px ;
+    font-style: italic;
+    background-color:  #f5f7fa; 
 }
 fieldset{
-    padding: 10px 20px;
+    padding: 16px;
 }
+section{
+    margin-bottom: 32px;
+
+}
+/*listas de horarios */
+main ul, main ol{
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+main li{
+    margin-bottom: 6px;
+}
+#glosario dt{
+    margin-left: 700;
+    margin-bottom: 12px;
+
+}
+#glosario dd{
+    margin-left: 20px;
+    margin-bottom: 8px;
+    /*La sangria de <dd> es lo que hace visible la realcion entre el termino y su descripcion*/
+}
+/*La tabla de calendario*/
+table{
+    width: 1000px ;
+    margin-bottom: 24px;
+    border-collapse: collapse;
+}
+
+caption{
+    padding: 8px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
     
 
 
