@@ -4,18 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="jennifervargas">
+  <meta name="author" content="Giocoto">
   <meta name="description" content="Formulario de matrícula para las sesiones de refuerzo del módulo CSTI12002.">
   <meta name="keywords" content="matrícula, registro, formulario, CSTI12002, INA">
 
   <title>Registro | Codificación de páginas web</title>
 
   <link rel="icon" href="recursos/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 
+<div class="contenedor">
 <body>
   <header id="inicio">
-    <h1>Codificación de páginas web</h1>
+    <h1>Contacto</h1>
     <p>Sitio de demostración del módulo <abbr title="Código del módulo">CSTI12002</abbr>.</p>
 
     <nav>
@@ -32,72 +37,9 @@
 
   <main id="contenido">
 
+    
     <article>
-      <h2>Formulario de matrícula</h2>
-
-          <p>
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required /><br /><br />
-          </p>
-
-          <p>
-            <label for="telefono">Teléfono:</label>
-            <input
-              type="tel" id="telefono" name="telefono" required pattern="[0-9]{8}"
-              title="Ingrese un número de teléfono válido de 8 dígitos"
-            /><br>
-          </p>
-        </fieldset><br>
-        <!--Cierre del fieldset información personal-->
-
-        <fieldset>
-          <legend>Detalles de Matrícula</legend>
-
-          <p>
-            <label for="fecha">Fecha de inicio:</label>
-            <input type="date" id="fecha" name="fecha" /><br /><br />
-          </p>
-
-          <p>
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" min="15" max="80" step="1"><br>
-          </p>
-        </fieldset><br>
-        <!--Cierre del fieldset detalles de matrícula-->
-
-        <fieldset>
-          <legend>Modalidad</legend>
-          <input type="radio"id="presencial" name="modalidad" value="presencial" />
-          <label for="presencial">Presencial</label><br />
-          <input type="radio" id="virtual" name="modalidad" value="virtual" />
-          <label for="virtual">Virtual</label><br />
-          <input type="radio" id="mixta" name="modalidad" value="mixta" />
-          <label for="mixta">Mixta</label><br>
-        </fieldset><br>
-        <!--Cierre del fieldset modalidad-->
-
-        
-        <label for="horario">Horario preferido</label><br><br>
-        <select id="horario" name="horario">
-          <option value="mañana">Mañana</option>
-          <option value="tarde">Tarde</option>
-          <option value="noche">Noche</option>
-        </select>
-        <br><br>
-
-        
-        <label for="comentarios">Comentarios:</label><br />
-        <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="200"></textarea><br /><br />
-
-        <input type="checkbox" id="terminos" name="terminos" required />
-        <label for="terminos">Acepto los términos y condiciones</label
-        ><br /><br />
-
-        <button type="submit">Enviar matrícula</button>
-      </form>
-    </main>
-
-    <footer>
+      <h2>Formulario matrícula</h2>
       <!--Footer: Pie, créditos, contacto, derechos-->
       <p>
         Complete los datos para inscribirse en una sesión de refuerzo.
@@ -258,11 +200,10 @@
     <h2>Contacto</h2>
     <address>
       Instituto Nacional de Aprendizaje<br>
-      Correo: <a href="mailto:jennifervargas@ejemplo.com">jennifervargas@ejemplo.com</a>
+      Correo: <a href="mailto:giocoto@ejemplo.com">giocoto@ejemplo.com</a>
     </address>
     <p><small>&copy; 2026 &middot; INA &middot; Todos los derechos reservados</small></p>
   </footer>
-
 </body>
-
+</div>
 </html>

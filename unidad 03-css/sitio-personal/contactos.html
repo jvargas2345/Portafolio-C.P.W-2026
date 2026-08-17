@@ -2,31 +2,6 @@
 <html lang="es">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Jennifer Vargas Gutierrez">
-    <meta name="description"
-        content="La Taza Dorada ofrece café de calidad, bebidas calientes, postres artesanales y un ambiente acogedor para compartir" />
-    <meta name="keywords"
-        content="café, bebidas calientes, postres artesanales, ambiente acogedor, compartir, Familia, momentos felices">
-
-    <title> Contacto | La Taza Dorada</title>
-    <link rel="icon" href="recursos/Icono-taza.webp" type="image/webp">
-</head>
-
-<!--Inicio del cuerpo de la página-->
-
-<body>
-    <!--cabecera-->
-    <!--Zona de navegacion lista desordenada-->
-    <header id="menu">
-        <!--Titulo de la pagina  Y frase de presentacion-->
-        <h1>Bienvenidos a la taza dorada</h1>
-        <p>
-            Disfruta de nuestra deliciosa selección de café y postres artesanales en
-            un ambiente acogedor.
-        </p>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Jennifer Vargas Gutierrez" />
@@ -51,11 +26,6 @@
                 <!--Direccion de paginas dentro de el menu-->
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="galeria.html">Galería</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="lista.html">Listas</a></li>
-            </ul>
-        </nav>
-    </header>
                 <li><a href="contactos.html">Contacto</a></li>
                 <li><a href="listas.html">Lista de Deseos</a></li>
             </ul>
@@ -73,19 +43,19 @@
                     <legend>Datos personales</legend>
                     <p>
                         <label for="Nombre">Nombre completo del cliente</label>
-                        <input type="text" id="Nombre" name="Nombre" required="4" maxlength="50"
+                        <input type="text" id="Nombre" name="Nombre" minlength="4" maxlength="50"
                             placeholder="Maria Jimenez Mora" />
                     </p>
 
                     <p>
                         <label for="Correo Electrónico">Correo</label>
-                        <input type="text" id="Correo" name="Correo" required minlength="10" maxlength="70"
+                        <input type="text" id="Correo" name="Correo" minlength="10" maxlength="70"
                             placeholder="Maria@gmail.com" />
                     </p>
 
                     <p>
                         <label for="Telefono">Telefono</label>
-                        <input type="tel" id="Telefono" name="Telefono"  required minlength="8" maxlength="20"
+                        <input type="text" id="Telefono" name="Telefono" minlength="8" maxlength="20"
                             placeholder="2211-1242" />
                     </p>
                 </fieldset>
