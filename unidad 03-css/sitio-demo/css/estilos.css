@@ -285,9 +285,11 @@ thead th {
 
 /*Las fuguras de galeria.html*/
 figure {
+    background: white;
     border: 1px solid #dddddd;
-    border-radius: 6px;
+    border-radius: 4px;
     padding: 12px;
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.68);
 }
 
 /*Los 5 valores de position
@@ -425,8 +427,8 @@ form textarea {
 }
 
 /*Casillas por separado*/
-form input[type="radio"],
-form input[type="checkbox"] {
+form input[type="radio"] + label,
+form input[type="checkbox"] +label {
     width: auto;
     margin-right: 6px;
     margin-bottom: 0;
@@ -439,3 +441,77 @@ form input[type="checkbox"] + label {
 } /*El selector + alcanza la etiqueta y display: inline los coloca una al lado del otro*/
 
 
+form input:focus,
+form select:focus,
+form textarea:focus{
+    outline: none;
+    border-color: #1f4e79;
+    box-shadow:  0 0 0 3px rgb(31, 78, 121, 0.15);
+    /*el halo azul alrededor del campo activo*/
+}
+
+
+/*Los estados de validacion*/
+form input:invalid:not(:placeholder-shown){
+    border-color: #2e7d32;
+}/*ahora la validacion html en los rquired type , patterm , htmlleng, etx, calocando un halo de color segun si es dato es correcto o no */
+
+form small{
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    color: #6b7280;
+}/*los small que acompañan a los campos con los textos "elejimos 0 caracteres entre 1 y 8 se"*/
+
+/*estilizar un boton */
+.boton button{
+    background-color: #c55a11;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;/*la mano indica elemento pulsable */
+
+}
+/*los 3 estados :  1 */
+.boton:hover{
+background: color #a8490a;
+
+}
+/*estado */
+.boton:active{
+    background-color: #8a3b08;
+}
+
+/*Estado 3: focus*/
+.boton:focus{
+    outline:  2px solid #c55a18;
+    outline-offset: 2px;
+}
+/*variante secundario*/
+.boton-secundario button{
+    background-color: #6b7280;
+}
+.boton-secundario:hover{
+    background-color: #4b5563;
+}
+/*tarjetas con sobra*/
+.tarjeta{
+    background-color: white;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px 3px rgb(0, 0, 0, 0.1);
+    box-shadow: 8px 1px 12px 3px rgb(0, 0, 0, 15);
+
+    /*desplazamiento horizontal 4px desplazamiento vertical. 12pz es el desenfoque cuantdo estat */
+
+}
+
+.tarjeta{
+    transform: translate(18px);/*valor negativo va hacia arriba valor positivo va hacia abajo*/
+    box-shadow: 0 6px 20px rgb(0, 0, 0, 0.15);
+}
