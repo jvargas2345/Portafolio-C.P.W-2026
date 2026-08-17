@@ -137,7 +137,7 @@ Proyecto propio construido de forma autónoma.
 |  S15   | Display y posicionamiento  |            | [ver](unidad-03/) | [ver](recursos/) |
 |  S16   | Flexbox                    |             | [ver](unidad-03/) | [ver](recursos/) |
 |  S17   | CSS Grid                   |             | [ver](unidad-03/) | [ver](recursos/) |
-|  S18   | Componentes estilizados    |             | [ver](unidad-03/) | [ver](recursos/) |
+|  S18   | Componentes estilizados    | Aprendimos a estilizar tarjetas con interactividad            | [ver](./unidad%2003-css/sitio-demo/galeria.html) | [ver](recursos/S18.png) |
 |  S19   | Animaciones y filtros      |             | [ver](unidad-03/) | [ver](recursos/) |
 |  S20   | SCSS y repaso              |             | [ver](unidad-03/) | [ver](recursos/) |
 
