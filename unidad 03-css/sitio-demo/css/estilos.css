@@ -425,8 +425,8 @@ form textarea {
 }
 
 /*Casillas por separado*/
-form input[type="radio"],
-form input[type="checkbox"] {
+form input[type="radio"] + label,
+form input[type="checkbox"] +label {
     width: auto;
     margin-right: 6px;
     margin-bottom: 0;
@@ -439,3 +439,25 @@ form input[type="checkbox"] + label {
 } /*El selector + alcanza la etiqueta y display: inline los coloca una al lado del otro*/
 
 
+form input:focus,
+form select:focus,
+form textarea:focus{
+    outline: none;
+    border-color: #1f4e79;
+    box-shadow:  0 0 0 3px rgb(31, 78, 121, 0.15);
+    /*el halo azul alrededor del campo activo*/
+}
+
+
+/*Los estados de validacion*/
+form input:invalid:not(:placeholder-shown){
+    border-color: #2e7d32;
+}/*ahora la validacion html en los rquired type , patterm , htmlleng, etx, calocando un halo de color segun si es dato es correcto o no */
+
+form small{
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    color: #6b7280;
+}/*los small que acompañan a los campos con los textos "elejimos 0 caracteres entre 1 y 8 se"*/
