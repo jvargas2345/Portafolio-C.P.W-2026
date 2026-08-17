@@ -510,3 +510,8 @@ background: color #a8490a;
     /*desplazamiento horizontal 4px desplazamiento vertical. 12pz es el desenfoque cuantdo estat */
 
 }
+
+.tarjeta{
+    transform: translate(18px);/*valor negativo va hacia arriba valor positivo va hacia abajo*/
+    box-shadow: 0 6px 20px rgb(0, 0, 0, 0.15);
+}
