@@ -170,6 +170,9 @@ nav a:hover {
 tbody tr :nth-child(even){
     background-color: #d7c5c5;
 }
+tbody tr:hover{
+    color: #f8cbad;
+}
 
 /*Pseudo-elemento ::firts-letter y ::selection*/
 article p::first-letter{
@@ -219,9 +222,18 @@ tfoot td{
     padding: 12px;
     font-style: italic;
     background-color: #f5f7fa;
+    border-top: 2px solid #1f4e79;
 }
 fieldset{
-    padding: 16px
+    padding: 16px;
+    margin: botton 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+legend{
+    padding: 0 8px;
+    font-weight: 700;
+    color: #1F4E79;
 }
 
 section{
@@ -260,6 +272,8 @@ caption{
     padding: 8px;
     font-weight: 700;
     margin-bottom: 24px;
+    text-align: left;
+    color: #6b7280;
 }
 /* El <caption> "Horario del módulo CSTI12002, primera semana" */
 
@@ -270,8 +284,11 @@ th, td {
 }
 
 thead th {
-  background-color: #1F4E79;
+  bacKground-color: #1F4E79;
   color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 /* ← Las cuatro celdas de encabezado: Semana · Día · Modalidad · Contenido */
 
@@ -391,3 +408,51 @@ escala de valores de z-index
     grid-template-columns: repeat(4, 1fr);
     gap: 100px;
 }
+fore label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/*casillas por separado*/
+form input[type="radio"],
+form input[type="checkbox"]{
+    width: auto;
+    margin-right: 6px;
+    margin-bottom: 0;
+}
+
+/*casillas por separado*/
+form input[type="radio"],
+form input[type="checkbox"]{
+    width: auto;
+    margin-right: 6px;
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+

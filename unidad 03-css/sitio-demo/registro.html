@@ -18,40 +18,39 @@
 </head>
 
 <div class="contenedor">
-<body>
-  <header id="inicio">
-    <h1>Contacto</h1>
-    <p>Sitio de demostración del módulo <abbr title="Código del módulo">CSTI12002</abbr>.</p>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="articulo.html">Artículo</a></li>
-        <li><a href="horario.html">Horario</a></li>
-        <li><a href="registro.html">Registro</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="insignia.html">Insignia</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header id="inicio">
+      <h1>Contacto</h1>
+      <p>Sitio de demostración del módulo <abbr title="Código del módulo">CSTI12002</abbr>.</p>
 
-  <main id="contenido">
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="articulo.html">Artículo</a></li>
+          <li><a href="horario.html">Horario</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="insignia.html">Insignia</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <article>
-      <h2>Formulario de matrícula</h2>
+    <main id="contenido">
 
-          <p>
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required /><br /><br />
-          </p>
+      <article>
+        <h2>Formulario de matrícula</h2>
 
-          <p>
-            <label for="telefono">Teléfono:</label>
-            <input
-              type="tel" id="telefono" name="telefono" required pattern="[0-9]{8}"
-              title="Ingrese un número de teléfono válido de 8 dígitos"
-            /><br>
-          </p>
+        <p>
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" required /><br /><br />
+        </p>
+
+        <p>
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{8}"
+            title="Ingrese un número de teléfono válido de 8 dígitos" /><br>
+        </p>
         </fieldset><br>
         <!--Cierre del fieldset información personal-->
 
@@ -72,7 +71,7 @@
 
         <fieldset>
           <legend>Modalidad</legend>
-          <input type="radio"id="presencial" name="modalidad" value="presencial" />
+          <input type="radio" id="presencial" name="modalidad" value="presencial" />
           <label for="presencial">Presencial</label><br />
           <input type="radio" id="virtual" name="modalidad" value="virtual" />
           <label for="virtual">Virtual</label><br />
@@ -81,7 +80,7 @@
         </fieldset><br>
         <!--Cierre del fieldset modalidad-->
 
-        
+
         <label for="horario">Horario preferido</label><br><br>
         <select id="horario" name="horario">
           <option value="mañana">Mañana</option>
@@ -90,16 +89,15 @@
         </select>
         <br><br>
 
-        
+
         <label for="comentarios">Comentarios:</label><br />
         <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="200"></textarea><br /><br />
 
         <input type="checkbox" id="terminos" name="terminos" required />
-        <label for="terminos">Acepto los términos y condiciones</label
-        ><br /><br />
+        <label for="terminos">Acepto los términos y condiciones</label><br /><br />
 
         <button type="submit">Enviar matrícula</button>
-      </form>
+        </form>
     </main>
 
     <footer>
@@ -117,39 +115,31 @@
 
           <p>
             <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre"
-                   required minlength="3" maxlength="60"
-                   placeholder="Ana Rodríguez Mora">
+            <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="60"
+              placeholder="Ana Rodríguez Mora">
           </p>
 
           <p>
             <label for="cedula">Número de identificación *</label>
-            <input type="text" id="cedula" name="cedula"
-                   required pattern="[0-9]{9}"
-                   title="Nueve dígitos, sin guiones ni espacios"
-                   placeholder="112345678">
+            <input type="text" id="cedula" name="cedula" required pattern="[0-9]{9}"
+              title="Nueve dígitos, sin guiones ni espacios" placeholder="112345678">
           </p>
 
           <p>
             <label for="correo">Correo electrónico *</label>
-            <input type="email" id="correo" name="correo"
-                   required
-                   placeholder="persona@ejemplo.com">
+            <input type="email" id="correo" name="correo" required placeholder="persona@ejemplo.com">
             <small>Se usará para confirmar la matrícula.</small>
           </p>
 
           <p>
             <label for="telefono">Teléfono *</label>
-            <input type="tel" id="telefono" name="telefono"
-                   required pattern="[0-9]{8}"
-                   title="Ocho dígitos, sin espacios ni guiones"
-                   placeholder="88887777">
+            <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{8}"
+              title="Ocho dígitos, sin espacios ni guiones" placeholder="88887777">
           </p>
 
           <p>
             <label for="clave">Contraseña de acceso *</label>
-            <input type="password" id="clave" name="clave"
-                   required minlength="8">
+            <input type="password" id="clave" name="clave" required minlength="8">
             <small>Mínimo ocho caracteres.</small>
           </p>
         </fieldset>
@@ -165,8 +155,7 @@
 
           <p>
             <label for="sesiones">Cantidad de sesiones *</label>
-            <input type="number" id="sesiones" name="sesiones"
-                   required min="1" max="8" step="1" value="2">
+            <input type="number" id="sesiones" name="sesiones" required min="1" max="8" step="1" value="2">
             <small>Entre 1 y 8 sesiones.</small>
           </p>
 
@@ -187,8 +176,7 @@
             <legend>Modalidad *</legend>
 
             <p>
-              <input type="radio" id="presencial" name="modalidad"
-                     value="presencial" required>
+              <input type="radio" id="presencial" name="modalidad" value="presencial" required>
               <label for="presencial">Presencial</label>
             </p>
             <p>
@@ -221,9 +209,8 @@
 
           <p>
             <label for="comentarios">Comentarios</label>
-            <textarea id="comentarios" name="comentarios"
-                      rows="4" maxlength="300"
-                      placeholder="Indique qué temas desea reforzar"></textarea>
+            <textarea id="comentarios" name="comentarios" rows="4" maxlength="300"
+              placeholder="Indique qué temas desea reforzar"></textarea>
             <small>Máximo 300 caracteres.</small>
           </p>
         </fieldset>
@@ -245,29 +232,33 @@
           <button type="reset">Limpiar formulario</button>
         </p>
       </form>
-    </article>
+      </article>
 
-    <aside>
-      <h2>Antes de enviar</h2>
-      <p>
-        Revise el <a href="horario.html#calendario">calendario</a> para
-        confirmar la disponibilidad de la fecha elegida.
-      </p>
-    </aside>
+      <aside>
+        <h2>Antes de enviar</h2>
+        <p>
+          Revise el <a href="horario.html#calendario">calendario</a> para
+          confirmar la disponibilidad de la fecha elegida.
+        </p>
+      </aside>
 
-    <p><a href="#inicio">Volver al inicio de la página</a></p>
+      <p><a href="#inicio">Volver al inicio de la página</a></p>
 
-  </main>
+      </main>
 
-  <footer>
-    <h2>Contacto</h2>
-    <address>
-      Instituto Nacional de Aprendizaje<br>
-      Correo: <a href="mailto:jennifervargas@ejemplo.com">jennifer@ejemplo.com</a>
-    </address>
-    <p><small>&copy; 2026 &middot; INA &middot; Todos los derechos reservados</small></p>
-  </footer>
+      <footer>
+        <h2>Contacto</h2>
+        <address>
+          Instituto Nacional de Aprendizaje<br>
+          Correo: <a href="mailto:jennifervargas@ejemplo.com">jennifer@ejemplo.com</a>
+        </address>
+        <p><small>&copy; 2026 &middot; INA &middot; Todos los derechos reservados</small></p>
+      </footer>
 
-</body>
+
+      
+
+  </body>
 </div>
+
 </html>
