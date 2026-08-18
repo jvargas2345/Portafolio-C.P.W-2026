@@ -516,7 +516,7 @@ background: color #a8490a;
     box-shadow: 0 6px 20px rgb(0, 0, 0, 0.15);
 }
 /*definir la transicion */
-@ketframes aparecer{
+@keyframes aparecer{
     from{
         opacity: 0;
         transform:translateY(20px);
@@ -530,4 +530,19 @@ background: color #a8490a;
 /*Aplica */
 .tarjeta{
     animation: aparecer 0.6 ease-out;
+}
+
+@keyframes pulso{
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.08);
+    }
+
+}
+
+.etiqueta{
+    animation: pulso 2s ease-out infinite;
+  
 }
