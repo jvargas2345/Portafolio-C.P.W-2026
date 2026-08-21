@@ -6,11 +6,11 @@
     /*Paleta de colores*/
     --color-tinta: #1a1a1a;/*texto principal: casi negro */
     --color-suave:#6b6b6b;/*texto secundario, pies de foto*/
-    --color-marcar:#2c3e50;/*el azul del estudio*/
+    --color-marca:#2c3e50;/*el azul del estudio*/
     --color-acento:#c87941;/*terracota de los botones*/
-    --color-acepto-osc:#a45f2e;/*terracota oscura*/
+    --color-acento-osc:#a45f2e;/*terracota oscura*/
     --color-fondo:#fafaf8;/*Blanco roto*/
-    --color-font-alt:#f0eee9; /*para alternar fondos secciones*/
+    --color-fondo-alt:#f0eee9; /*para alternar fondos secciones*/
     --color-linea:#dddad3;/*Bordes y separadores*/
     --color-blanco:#ffffff; /*Blanco puro*/
 
@@ -71,7 +71,7 @@
     h1,h2,h3{
         font-family: var(--fuente-titulo);
         line-height: 1.2;
-        color: var(--color-marcar);
+        color: var(--color-marca);
     }
 
     h1{font-size: 4.8rem;}
@@ -89,7 +89,7 @@
     }
 
     img{
-        max-width: 100px;
+        max-width: 100%;
         height: auto;
         display: block;
     }
@@ -103,7 +103,7 @@
         /*dos valores: el primero afecta arriba y el abajo  y luego izquierda y derecha*/
     }
 
-    .seccion-alterna{
+.seccion-alterna{
         background-color: var(--color-fondo-alt);
         max-width: none;/*Se anula el ancho maximo para que el fondo ocupe todo el ancho de la pantalla */
         
