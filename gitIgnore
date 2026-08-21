@@ -1,6 +1,0 @@
-# .GitIgnore del curso
-#Sistema operativo
-#Thumbs.db
-#Temporales y comprimidos de trabajo 
-*.tmp 
-*.zip
