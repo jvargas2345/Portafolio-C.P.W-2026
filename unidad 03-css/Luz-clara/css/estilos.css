@@ -157,8 +157,69 @@
     .subtitulo{
         margin-top:var(--esp-md);
     }
-    
 
+    .cabecera{
+        display: flex;/*activa flexbox*/
+        justify-content: space-between;/*Colocando el primer inicio y el segundo al final*/
+        align-items:center;
+        padding: var(--esp-sm) var(--esp-md);
+        border-bottom: 0.1rem solid var(--color-linea);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: var(--color-marca);
+    }
+
+    .logo:hover .logo-icono{
+        transform: rotate(-8deg);/*cuando el logo esta sobre el logo se vuelve -8 grados */
+    }
+
+    .logo-texto{
+        font-family: var(--fuente-titulo);
+        font-size: 2rem;
+        font-weight: 700;
+
+    }
+
+    .menu{
+        display: flex;
+        gap: var(--esp-sm);
+        list-style: none;
+    }
+
+    .menu-enlace{
+        display: inline-block;
+        padding: var(--esp-xs) var(--esp-sm);/*esta linea permite aplicar relleno vertical*/
+        color: var(--color-tinta);
+        font-weight: 600;
+        border-radius: var(--radio);
+        transition: background-color var(--transicion), color var(--transicion);/*la transicion se aplica a dos propiedades*/
+
+    }
+    .menu-enlace{
+        transition: background-color var(--transicion), color var(--transicion);/*la transicion se aplica a dos propiedades*/
+    }
+
+    .menu-enlace:hover{
+        background-color: var(--color-fondo-alt);
+        color: var(--color-marca);
+    }
+
+    .menu-enlace:focus{
+        outline: 2rem solid var(--color-acento);
+        outline-offset: 0.2rem;/*Se activa con las teclas de tabulación  el enlace*/
+    }
+
+    .menu-enlace .active{
+        background-color: var(--color-acento);
+        color: var(--color-blanco);
+    }
 
 
 
