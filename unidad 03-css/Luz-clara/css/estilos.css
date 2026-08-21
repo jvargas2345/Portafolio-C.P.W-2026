@@ -217,8 +217,89 @@
     }
 
     .menu-enlace .active{
+        /*dos clases del mismo elemento. significa que el elemento tiene ambas clases es la marva de la pagina actual o activa*/
         background-color: var(--color-acento);
         color: var(--color-blanco);
+    }
+
+
+
+    /*PORTAFA*/
+    /*Aqui va la imagen de fondo*/
+
+    .portada{
+        background-image: url('./estilos.css/../img/portada.jpg');
+        background-color: var(--color-marca);
+        background-size: cover;/*La imagen de fondo cubre todo el contenedor*/
+        background-position: center;/*La imagen de fondo se centra*/
+        background-repeat: no-repeat;/*La imagen de fondo no se repite*/
+        min-height: 55rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--esp-md);
+        text-align: center;
+
+    }
+
+    .portada-caja{
+        background-color: rgba(0,0,0,0.45);/*El color de fondo es blanco con opacidad del 90%*/
+        padding: var(--esp-lg);
+        border-radius: var(--radio);
+        max-width: 70rem;
+    }
+
+    .portada-titulo{
+        color: var(--color-blanco);
+        margin-bottom: var(--esp-sm);
+    }
+
+    .portada-bajada{
+        color: var(--color-blanco);
+        font-size: 1.8rem;
+        margin-bottom: var(--esp-md);
+    }
+
+
+    /*Servicios- flexbox*/
+    .fila-servicios{
+        display: flex;
+        gap: var(--esp-md);
+        flex-wrap: wrap;/*Permite que los elementos se acomoden en varias filas*/
+    }
+
+    .tarjeta{
+        flex: 1 1 30rem;/*1 flex.grow; si sobra espacio crece. 1 flex-shrink se falta espacio se encoge. 30rem flex-basis:display: parte de un tamaño base $300;*/
+        background-color: var(--color-blanco);
+        padding: var(--esp-md);
+        border-radius: var(--radio);
+        box-shadow: var(--sombra-2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;/*Los elementos hijos se acomodan en columna*/
+        transition: transform var(--transicion), box-shadow var(--transicion);
+
+    }
+
+    .tarjeta-icono{
+        color:var(--color-acento); margin: 0 auto;
+    }
+
+    .tarjeta-titulo{
+        margin-bottom: var(--esp-xs);
+    }
+    .tarjeta-texto{
+        color: var(--color-suave);
+        flex-grow: 1;/*en 1 hace que el parrafo adsorda todo el espacio vertical sobrante de la tarjeta*/
+    }
+
+    .tarjeta-precio{
+        font-weight: 700;
+        color: var(--color-marca);
+        font-size: 1.8rem;
+        margin-bottom: 0;
+        padding-top: var(--esp-sm);
+        border-top: 0.1rem solid var(--color-linea);
     }
 
 
