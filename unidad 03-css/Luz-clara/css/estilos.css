@@ -51,7 +51,7 @@
  
  
  html{
-        font-size: 62.5;/*Por omision del navegador usa 16px para el tamaño base. el 62.5 de 16 es exactamente 10. 
+        font-size: 62.5%;/*Por omision del navegador usa 16px para el tamaño base. el 62.5 de 16 es exactamente 10. 
         tiene que ver con accesibilidad y la parte responsiva*/
         scroll-behavior: smooth; /*Saltos suaves al usar la navegacion con anclas */
     }
@@ -107,8 +107,6 @@
         background-color: var(--color-fondo-alt);
         max-width: none;/*Se anula el ancho maximo para que el fondo ocupe todo el ancho de la pantalla */
         
-        
-
         
     }
 
