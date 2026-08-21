@@ -1,308 +1,385 @@
-/*Estudio luz clara*/
-/*Variables y configuraciones*/
-/*Una variables guarde un valor con un nombre para poder reutilizarlo*/
-/*se declara dentro de :root, que represernte el elemento html y es el ancestro de todos los elementos del documento lo pueden usar */
-:root{
-    /*Paleta de colores*/
-    --color-tinta: #1a1a1a;/*texto principal: casi negro */
-    --color-suave:#6b6b6b;/*texto secundario, pies de foto*/
-    --color-marca:#2c3e50;/*el azul del estudio*/
-    --color-acento:#c87941;/*terracota de los botones*/
-    --color-acento-osc:#a45f2e;/*terracota oscura*/
-    --color-fondo:#fafaf8;/*Blanco roto*/
-    --color-fondo-alt:#f0eee9; /*para alternar fondos secciones*/
-    --color-linea:#dddad3;/*Bordes y separadores*/
-    --color-blanco:#ffffff; /*Blanco puro*/
+/*ESTUDIO LUZ CLARA*/
 
+/*VARIABLES Y CONFIGURACIÓN*/
+/*Una VARIABLE  guarda un valor con un nombre, para poder reutilizarlo.
 
+Se declaran dentro :root, que represente el elemento html y es el ancestro de todos. Todos elementos del documento lo pueden usar*/
 
-/*Tipografia*/
---fuente-titulo:Georgia,'Times New Roman', serif;
---fuente-texto:'Segoe UI', Arial, sans-serif;
+:root {
+    /*paleta de colores*/
+    --color-tinta: #1a1a1a; /*texto principal. casi negro*/
+    --color-suave: #6b6b6b; /*texto secundario, pies de foto*/
+    --color-marca: #2c3e50; /*el azul del estudio*/
+    --color-acento: #c87941; /*terracota de los botones*/
+    --color-acento-osc: #a45f2e; /*terracota oscuro*/
+    --color-fondo: #fafaf8; /*blanco roto. no blanco puro*/
+    --color-fondo-alt: #f0eee9; /*para alternar fondos secciones*/
+    --color-linea: #dddad3; /*bordes y separadores*/
+    --color-blanco: #ffffff; /*blanco puro*/
 
+    /*TIPOGRAFÍA*/
+--fuente-titulo: Georgia, 'Times New Roman', serif;
+--fuente-texto: 'Segoe UI', Arial, sans-serif;
 
+/*ESPACIADO. Conversión 1rem = 10px*/
+--esp-xs: 0.8rem; /*8px*/
+--esp-sm: 1.6rem; /*16px*/
+--esp-md: 2.4rem; /*24px*/
+--esp-lg: 4rem; /*40px*/
+--esp-xl: 8rem; /*80px*/
 
-/*Espaciado. Conversion 1rem= 10px*/
---esp-xs:0.8rem;/*8px*/
---esp-sm:1.6rem;/*16px*/
---esp-md:2.4rem;/*24px*/
---esp-lg:4rem; /*40px*/
---esp-xl:8rem; /*80px*/
-
-/*otros elementos*/
---radio:0.6rem; /*6px*/
---sombra-1: 0 0.2rem 0.6rem rgba(0,0,0,.06);/*Apenas separado*/
---sombra-2: 0 0.4rem 1.2rem rgba(0,0,0,.10);/*Tarjetas*/
---sombra-3: 0 0.8rem 2.0rem rgba(0,0,0,.16);/*Elementos elevados*/
---transicion: 0.25s ease;
---ancho-max:120rem; /*1200px*/
+/*OTROS ELEMENTOS*/
+    --radio: 0.6rem; /*6px*/
+    --sombra-1: 0 0.2rem 0.6rem rgba(0,0,0,.06); /*apenas separado*/
+    --sombra-2: 0 0.4rem 1.2rem rgba(0,0,0,.10); /*tarjetas*/
+    --sombra-3: 0 0.8rem 2.0rem rgba(0,0,0,.16); /*elementos elevados*/
+    --transicion: 0.25s ease;
+    --ancho-max: 120rem; /*1200px*/
 }
-/*RESET Y BASE TIPOGRAFICA*/
-*{
+
+/*RESET Y BASE TIPOGRÁFICA*/
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;/*La linea mas importante del reset:
-    porque  sin ella, si a una caja le damos width: 300px y ademas padding: 20px y border: 2px, la caja enrealidad mide: 300px
-    y ademas padding: 20px y border: 2px, la caja en realidad mide: 300+20+20+2+2 = 344px. con esta linea el relleno y el borde se descuentan hacia dentro */
+    box-sizing: border-box; /*la línea  más importante del reset: porque sin ella, si a una caja le damos width: 300px y además padding: 20px y border: 2px, la caja en realidad mide: 300+20+20+2+2 = 344px. con esta línea el relleno y el borde se descuentan hacia adentro*/
+}
+/*LA BASE DEL TAMAÑO. La técnica del 62.5%*/
+html {
+    font-size: 62.5%; /*por omision el navegador usa 16px para el tamaño base. el 62.5 de 16 es exactamente 10. Tiene que ver con accesibilidad y la parte responsive*/
 
- }   
+    scroll-behavior: smooth;/*Saltos suaves al usar navegación con anclas*/
+}
 
- /*LA BASE DEL TAMAÑO. La tecnica del 62.5%*/
- 
- 
- html{
-        font-size: 62.5%;/*Por omision del navegador usa 16px para el tamaño base. el 62.5 de 16 es exactamente 10. 
-        tiene que ver con accesibilidad y la parte responsiva*/
-        scroll-behavior: smooth; /*Saltos suaves al usar la navegacion con anclas */
-    }
+body {
+    font-size: 1.6rem;/*si no se agrega esta línea el texto no toma el valor de los 16px base y quedaria un texto casi elegible*/
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+    color: var(--color-tinta);
+    background-color: var(--color-fondo);
+}
 
+/*JERARQUÍA DE TÍTULOS*/
+h1, h2, h3 {
+    font-family: var(--fuente-titulo);
+    line-height: 1.2;
+    color: var(--color-marca);
+}
+h1 {font-size: 4.8rem;}
+h2 {font-size: 3.2rem;}
+h3 {font-size: 2.0rem;}
 
-    body{
-        font-size: 1.6rem;/*si no se agrega esta linea de texto no toma el valor de los 16px base y quedaria un texto casi
-        elegible*/
-        font-family: var(--fuente-texto);
-        line-height: 1.6;
-        color:var(--color-tinta);
-        background-color: var(--color-fondo);
-    }
+p {
+    margin-bottom: var(--esp-sm);
+}
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-    /*Jerarquia de titulos*/
-    h1,h2,h3{
-        font-family: var(--fuente-titulo);
-        line-height: 1.2;
-        color: var(--color-marca);
-    }
+/*CONTENEDORES Y SECCIONES*/
+.seccion {
+    max-width: var(--ancho-max);/*toma todo el ancho disponible*/
+    margin-left: auto;
+    margin-right: auto;/*Centra el bloque. repartiendo el espacio sobrantre por igual*/
+    padding: var(--esp-xl) var(--esp-md);
+    /*Dos valores: el primero afecta arriba y abajo y luego izquierda y derecha*/
+}
 
-    h1{font-size: 4.8rem;}
-    h2{font-size: 3.2rem;}
-    h3{font-size: 2.0rem;}
+.seccion-alterna {
+    background-color: var(--color-fondo-alt);
+    max-width: none;/*se anula el ancho máximo para que el el fondo ocupe todo el ancho de pantalla*/
+}
+.seccion-alterna > * {
+    max-width: var(--ancho-max);
+    margin-left: auto;
+    margin-right: auto;/*el contenido de esta seccion se limita y se centra. el selector > significa "hijo directo", alcanza solo el primer nivel de elentos. No a los nietos*/
+}
 
+.seccion-titulo {
+    margin-bottom: var(--esp-sm);
+    text-align: center;
+}
 
-    p{
-        margin-bottom: var(--esp-sm);
-    }
+.seccion-entrada {
+    max-width: 65ch; /*La unudad ch equivale al ancho del caracter "0" de la fuente en uso, son 65 caracteres por linea para una lectura má cómoda*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--esp-lg);
+    text-align: center;
+    color: var(--color-suave);
+}
 
-    a{
-        color: var(--color-acento);
-        text-decoration: none;
-    }
+.pagina-encabezado {
+    max-width: var(--ancho-max);
+    margin: 0  auto;
+    padding: var(--esp-xl) var(--esp-md) var(--esp-lg);
+    /*Tres valores: arriba, los lados y abajo*/
+    text-align: center;
+}
 
-    img{
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+.pagina-titulo {
+    margin-bottom: var(--esp-xs);
+}
 
-    /*Contenedores y secciones*/
-    .seccion{
-        max-width:var(--ancho-max);/*Toma todo el ancho disponible*/
-        margin-left: auto;
-        margin-right: auto;/*Centrar el bloque. repartiendo el espacio sobrante por igual*/
-        padding: var(--esp-xl) var(--esp-md);
-        /*dos valores: el primero afecta arriba y el abajo  y luego izquierda y derecha*/
-    }
+.pagina-bajada {
+    color: var(--color-suave);
+    font-size: 1.8rem;
+}
 
-.seccion-alterna{
-        background-color: var(--color-fondo-alt);
-        max-width: none;/*Se anula el ancho maximo para que el fondo ocupe todo el ancho de la pantalla */
-        
+.subtitulo {
+    margin-top: var(--esp-md);
+    margin-bottom: var(--esp-xs);
+}
 
-    }
+/*CABECERA Y MENU*/
+.cabecera {
+    display: flex; /*Activa FLEXBOX*/
+    justify-content: space-between;/*COLOCANDO EL PRIEMR AL INICIO Y EL SEGUNDO AL FINAL*/
+    align-items: center;
+    padding: var(--esp-sm) var(--esp-md);
+    border-bottom: 0.1rem solid var(--color-linea);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-xs);
+    color: var(--color-marca);
+}
 
-    .seccion-alterna > * {
-        max-width:var(--ancho-max);
-        margin-left: auto;
-        margin-right: auto; /*El contenido de esta seccion se limita y se centra. El selector> significa "Hijo directo",
-        alcance solo el primer nivel de elementos. No a los nietos*/
-        
-    }
+.logo:hover .logo-icono {
+    transform: rotate(-8deg); /*cuando el cursor este sobre el logo se vuelve -8 grados*/
+}
+.logo-texto {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-    .seccion-titulo{
-        margin-bottom: var(--esp-md);
-        text-align: center;
-    }
+.menu {
+    display: flex;
+    gap: var(--esp-sm);
+    list-style: none;
+}
+.menu-enlace {
+    display: inline-block; /*esta linea perimte aplicar relleno vertical*/
+    padding: var(--esp-xs) var(--esp-sm);
+    color: var(--color-tinta);
+    font-weight: 600;
+    border-radius: var(--radio);
+    transition: background-color var(--transicion), color var(--transicion);
+}
 
-    .seccion-entrada{
-        max-width: 65ch;/*La unidad ch equivale al ancho del caracter "0" de la fuente en uso, 65 caracteres por linea
-        para una lectura mas comoda*/
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: var(--esp-lg);
-        text-align: center;
-        color:var(--color-suave);
-    }
+.menu-enlace:hover {
+    background-color: var(--color-fondo-alt);
+    color: var(--color-marca);
+}
 
+.menu-enlace:focus {
+    outline: 0.2rem solid var(--color-acento);
+    outline-offset: 0.2rem; /*Se activa con la tecla tab al llegar el enlace. permite navegar el sitio con el teclado*/
+}
 
-    .pagina-encabezado{
-        max-width: var(--ancho-max);
-        margin: 0 auto;
-        padding: var(--esp-x1) var(--esp-md) var(--esp-lg);
-        /*Tres valores:arriba, los lados, y abajo*/  
-        text-align: center;
-    }
+.menu-enlace.activo { /*dos clases del mismo elemento. Signinica que el element oque tenga las  dos clases es la marca de  la pa´gina actual o activa*/
+    color: var(--color-acento);
+}
 
+/*PORTADA*/
+/*aquí va la imagen de fondo*/
+.portada {
+    background-image: url('../recursos/portada.webp');
+    background-color: var(--color-marca);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /*la imagen si fuera más pequeña que el contenedor se no se repitiría*/
+    min-height: 55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--esp-md);
+    text-align: center;
+}
+.portada-caja {
+    background-color: rgba(0,0,0,0.45);
+    padding: var(--esp-lg);
+    border-radius: var(--radio);
+    max-width: 70rem;
+}
 
-    .pagina-titulo{
-        margin-bottom: var(--esp-xs);
+.portada-titulo {
+    color: var(--color-blanco);
+    margin-bottom: var(--esp-sm);
+}
 
-    }
+.portada-bajada {
+    color: var(--color-blanco);
+    font-size: 1.8rem;
+    margin-bottom: var(--esp-md);
+}
 
-    .pagina-bajada{
-        color: var(--color-suave);
-        font-size: 1.8rem;
-    }
+/*SERVICIOS - FLEXBOX*/
+.fila-servicios {
+    display: flex;
+    gap: var(--esp-md);
+    flex-wrap: wrap;
+}
+.tarjeta {
+    flex: 1 1 30rem; /*1 flex-grow: si sobra espacio crece. 1 flex-shrink se falta espacio se encoge. 30rem fle-basis: parte de un tamaño base 300px */
+    background-color: var(--color-blanco);
+    padding: var(--esp-md);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+.tarjeta-icono {
+    color: var(--color-acento); margin: 0 auto;
+}
+.tarjeta-titulo {
+    margin-bottom: var(--esp-xs);
+}
 
-    .subtitulo{
-        margin-top:var(--esp-md);
-    }
+.tarjeta-texto {
+    color: var(--color-suave);
+    flex-grow: 1; /*en 1 hace  que el parrafo adsorba tod el espacio vertical sobrante de la tarjeta*/
+}
 
-    .cabecera{
-        display: flex;/*activa flexbox*/
-        justify-content: space-between;/*Colocando el primer inicio y el segundo al final*/
-        align-items:center;
-        padding: var(--esp-sm) var(--esp-md);
-        border-bottom: 0.1rem solid var(--color-linea);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+.tarjeta-precio {
+    font-weight: 700;
+    color: var(--color-marca); 
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    padding-top: var(--esp-sm);
+    border-top: 0.1rem solid var(--color-linea);
+}
 
-    }
+/*GALERIA . CSS GRID*/
+/*GRID dos dimensiones, cuadrícula de filas y columnas*/
+.rejilla-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    /*Se lee de adentro hacia afuera: minmax(28rem, 1fr: cada columna mida 280px y como máximo una fraccion del espacio disponible. repeat(auto-fit: crea tantaas como quepan con esa medida. JUNTAS: pone todas las columnas las que quepan en 280px y reparte el espacio sobrante entre ellas. Responsive si media queris */
+    gap: var(--esp-sm);
+}
 
-    .logo{
-        display: flex;
-        align-items: center;
-        gap: var(--color-marca);
-    }
+.galeria-pieza {
+    position: relative; /*No mueve la figura, solo le declara un punto de referencia pata los hijos*/
+    overflow: hidden; /*Recorta lo que sobre sale de los limites de la figuta. Permite que la img se agrande al pasar el curso sin invadir a las figuras vecinas*/
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-1);
+}
+.pieza-destacada {
+    grid-column: span 2; /*ocupa dos columnas*/
+    grid-row: span 2; /*y dos filas*/
+}
 
-    .logo:hover .logo-icono{
-        transform: rotate(-8deg);/*cuando el logo esta sobre el logo se vuelve -8 grados */
-    }
+.galeria-pieza img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*recorta la imagen por el centro para no deformarla*/
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: grayscale(60%); /*el filtro quita el 60% del color*/
+}
+.galeria-pieza:hover img {
+    transform: scale(1.6);
+    filter: grayscale(0); /*recupera el color*/
+}
+.galeria-pie {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; /*adsolute se uvbica con respecto al ancestro más cercano con posición relative*/
+    background-color: rgba(0,0,0,0.65);
+    color: var(--color-blanco);
+    padding: var(--esp-xs);
+    font-size: 1.3rem;
+    text-align: center;
+    transform: translateY(100%); /**Lo desplaza hacia abajo el 100% de su altuta*/
+    transition: transform var(--transicion);
+}
 
-    .logo-texto{
-        font-family: var(--fuente-titulo);
-        font-size: 2rem;
-        font-weight: 700;
+.galeria-pieza:hover .galeria-pie {
+    transform: translateY(0); /*el pie de foto vuelve a su posición deslizandose desde abajo*/
+}
 
-    }
+/*EQUIPO*/
+.rejilla-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: var(--esp-md);
+}
+.ficha {
+    background-color: var(--color-blanco);
+    padding: var(--esp-md); 
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-1);
+    text-align: center;
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
 
-    .menu{
-        display: flex;
-        gap: var(--esp-sm);
-        list-style: none;
-    }
+.ficha-foto {
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto var(--esp-md);
+    border: 0.3rem solid var(--color-fondo-alt);
+}
+.ficha-nombre {
+    margin-bottom: 0.2rem;
+}
 
-    .menu-enlace{
-        display: inline-block;
-        padding: var(--esp-xs) var(--esp-sm);/*esta linea permite aplicar relleno vertical*/
-        color: var(--color-tinta);
-        font-weight: 600;
-        border-radius: var(--radio);
-        transition: background-color var(--transicion), color var(--transicion);/*la transicion se aplica a dos propiedades*/
+.ficha-rol {
+    color: var(--color-acento); 
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: var(--esp-xs);
+}
+.ficha-texto {
+    color: var(--color-suave);
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
 
-    }
-    .menu-enlace{
-        transition: background-color var(--transicion), color var(--transicion);/*la transicion se aplica a dos propiedades*/
-    }
+/*DOS COLUMNAS*/
+.dos-columnas {
+    display: flex;
+    gap: var(--esp-lg);
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.columna-texto {
+    flex: 1 1 32rem;
+}
 
-    .menu-enlace:hover{
-        background-color: var(--color-fondo-alt);
-        color: var(--color-marca);
-    }
+.columna-imagen {
+    flex: 1 1 32rem;
+    margin: 0;
+}
+.columna-imagen img {
+    border-radius: var(--radio);
+    box-shadow: var(--sombra-2);
+    width: 100%;
+}
 
-    .menu-enlace:focus{
-        outline: 2rem solid var(--color-acento);
-        outline-offset: 0.2rem;/*Se activa con las teclas de tabulación  el enlace*/
-    }
-
-    .menu-enlace .active{
-        /*dos clases del mismo elemento. significa que el elemento tiene ambas clases es la marva de la pagina actual o activa*/
-        background-color: var(--color-acento);
-        color: var(--color-blanco);
-    }
-
-
-
-    /*PORTAFA*/
-    /*Aqui va la imagen de fondo*/
-
-    .portada{
-        background-image: url('./estilos.css/../img/portada.jpg');
-        background-color: var(--color-marca);
-        background-size: cover;/*La imagen de fondo cubre todo el contenedor*/
-        background-position: center;/*La imagen de fondo se centra*/
-        background-repeat: no-repeat;/*La imagen de fondo no se repite*/
-        min-height: 55rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--esp-md);
-        text-align: center;
-
-    }
-
-    .portada-caja{
-        background-color: rgba(0,0,0,0.45);/*El color de fondo es blanco con opacidad del 90%*/
-        padding: var(--esp-lg);
-        border-radius: var(--radio);
-        max-width: 70rem;
-    }
-
-    .portada-titulo{
-        color: var(--color-blanco);
-        margin-bottom: var(--esp-sm);
-    }
-
-    .portada-bajada{
-        color: var(--color-blanco);
-        font-size: 1.8rem;
-        margin-bottom: var(--esp-md);
-    }
-
-
-    /*Servicios- flexbox*/
-    .fila-servicios{
-        display: flex;
-        gap: var(--esp-md);
-        flex-wrap: wrap;/*Permite que los elementos se acomoden en varias filas*/
-    }
-
-    .tarjeta{
-        flex: 1 1 30rem;/*1 flex.grow; si sobra espacio crece. 1 flex-shrink se falta espacio se encoge. 30rem flex-basis:display: parte de un tamaño base $300;*/
-        background-color: var(--color-blanco);
-        padding: var(--esp-md);
-        border-radius: var(--radio);
-        box-shadow: var(--sombra-2);
-        text-align: center;
-        display: flex;
-        flex-direction: column;/*Los elementos hijos se acomodan en columna*/
-        transition: transform var(--transicion), box-shadow var(--transicion);
-
-    }
-
-    .tarjeta-icono{
-        color:var(--color-acento); margin: 0 auto;
-    }
-
-    .tarjeta-titulo{
-        margin-bottom: var(--esp-xs);
-    }
-    .tarjeta-texto{
-        color: var(--color-suave);
-        flex-grow: 1;/*en 1 hace que el parrafo adsorda todo el espacio vertical sobrante de la tarjeta*/
-    }
-
-    .tarjeta-precio{
-        font-weight: 700;
-        color: var(--color-marca);
-        font-size: 1.8rem;
-        margin-bottom: 0;
-        padding-top: var(--esp-sm);
-        border-top: 0.1rem solid var(--color-linea);
-    }
-
-
-
-
+.imagen-pie {
+    margin-top: var(--esp-xs);
+    font-size: 1.3rem;
+    color: var(--color-suave);
+    text-align: center;
+    font-style: italic;
+}
 
