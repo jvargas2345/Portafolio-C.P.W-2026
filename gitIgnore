@@ -2,5 +2,5 @@
 #Sistema operativo
 #Thumbs.db
 #Temporales y comprimidos de trabajo 
-.tmp 
-.zip
+*.tmp 
+*.zip
