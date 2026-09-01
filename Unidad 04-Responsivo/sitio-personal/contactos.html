@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jennifer Vargas Gutierrez" />
+    <meta name="description"
+        content="La Taza Dorada ofrece café de calidad, bebidas calientes, postres artesanales y un ambiente acogedor para compartir" />
+    <meta name="keywords"
+        content="café, bebidas calientes, postres artesanales, ambiente acogedor, compartir, Familia, momentos felices" />
+
+    <title>Contactos | La Taza Dorada</title>
+    <link rel="icon" href="recursos/Icono-taza.webp" type="image/webp" />
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+    <header id="menu">
+        <!--Titulo de la pagina  Y frase de presentacion-->
+        <h1>Contactanos</h1>
+        <p>Puedes contactarnos</p>
+
+        <!--Menu de la pagina-->
+        <nav>
+            <ul>
+                <!--Direccion de paginas dentro de el menu-->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+                <li><a href="listas.html">Lista de Deseos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main type="informacion">
+        <article>
+            <h2>Formulario para nuestros clientes</h2>
+            <p>
+                Complete los siguientes datos y un encargado se comunicara con usted
+            </p>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <p>
+                        <label for="Nombre">Nombre completo del cliente</label>
+                        <input type="text" id="Nombre" name="Nombre" minlength="4" maxlength="50"
+                            placeholder="Maria Jimenez Mora" />
+                    </p>
+
+                    <p>
+                        <label for="Correo Electrónico">Correo</label>
+                        <input type="text" id="Correo" name="Correo" minlength="10" maxlength="70"
+                            placeholder="Maria@gmail.com" />
+                    </p>
+
+                    <p>
+                        <label for="Telefono">Telefono</label>
+                        <input type="text" id="Telefono" name="Telefono" minlength="8" maxlength="20"
+                            placeholder="2211-1242" />
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalles de la solicitud</legend>
+                    <p>
+                        <label for="Fecha">Ingrese la fecha de visita</label>
+                        <input type="date" id="Fecha" name="Fecha" required />
+                    </p>
+
+
+                    <p>
+                        <label for="visitas">Indique la cantidad de veces que visito el local este año</label>
+                        <input type="number" id="visitas" name="visitas" required min="1" max="320" step="1" value="2">
+                    </p>
+
+                    <p>
+                        <label for="Mensaje">Mensaje</label>
+                        <textarea id="Mensaje" name="Mensaje" maxlength="300"
+                            placeholder="Indique el asunto"></textarea>
+                        <small>Máximo 300 caracteres.</small>
+                    </p>
+
+                    <p>
+                        <label for="clave">Contraseña de acceso </label>
+                        <input type="password" id="clave" name="clave" required minlength="8" />
+                        <small>Mínimo ingrese porfavor ocho caracteres.</small>
+                    </p>
+
+
+                </fieldset>
+
+
+
+
+
+
+                <fieldset>
+                    <!-- Opciones de cita -->
+                    <fieldset>
+                        <legend>¿ Desea agendar una cita ?</legend>
+
+                        <p>
+                            <input type="radio" id="cita-si" name="cita-si" value="cita-si" required>
+                            <label for="cita-si">Si</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="cita-no" name="cita-no" value="cita-no">
+                            <label for="cita-no">No</label>
+                        </p>
+                    </fieldset>
+
+
+
+                    <p>
+                        <label for="mes">Ingrese el mes que desea agendar una cita con el personal</label>
+                        <select id="mes" name="mes">
+                            <option value="">Seleccione el mes mas conveniente para usted </option>
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                    </p>
+
+
+                    <!-- Casillas de verificación: se pueden marcar varias -->
+                    <fieldset>
+                        <legend>Marque la modalidad de la reunion</legend>
+
+                        <p>
+                            <input type="checkbox" id="Virtual" name="modalidad" value="Virtual">
+                            <label for="Virtual" required min="1" max="1">Virtual </label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="Presencial" name="modalidad" value="Presencial">
+                            <label for="Presencial">Presencial</label>
+                        </p>
+                    </fieldset>
+
+                    
+                </fieldset>
+
+
+
+
+
+
+
+            </form>
+        </article>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Pie de página-->
+    <footer id="pie">
+        <h4>Contacto</h4>
+
+        <address>
+            <a href="https://maps.app.goo.gl/NpQCwGDfZ4486R2JA" target="_blank" rel="noopener noreferrer">Ubicacion San
+                jose, Costa Rica,av.110</a>
+            <p>Teléfono: +506 2222 2222</p>
+            <a href="mailto:info@latazadorada.com">info@latazadorada.com</a>
+        </address>
+
+        <p>
+            <small>&copy; 2024 La Taza Dorada. Todos los derechos reservados.</small>
+        </p>
+    </footer>
+</body>
+
+</html>

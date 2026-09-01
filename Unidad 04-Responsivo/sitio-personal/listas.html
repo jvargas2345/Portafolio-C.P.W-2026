@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jennifer Vargas Gutierrez">
+    <meta
+      name="description"
+      content="La Taza Dorada ofrece café de calidad, bebidas calientes, postres artesanales y un ambiente acogedor para compartir">
+    <meta
+      name="keywords"
+      content="café, bebidas calientes, postres artesanales, ambiente acogedor, compartir, Familia, momentos felices">
+
+    <title>Listas | La Taza Dorada</title>
+    <link rel="icon" href="recursos/Icono-taza.webp" type="image/webp">
+    <link rel="stylesheet" href="css/estilos.css">
+
+  </head>
+
+  <body>
+    <header id="menu">
+      <!--Titulo de la pagina  Y frase de presentacion-->
+      <h1>Lista de opciones menu</h1>
+      <p>
+        Disfruta de nuestra deliciosa selección de café y postres artesanales en
+        un ambiente acogedor.
+      </p>
+
+      <!--Menu de la pagina-->
+      <nav>
+        <ul>
+          <!--Direccion de paginas dentro de el menu-->
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contactos.html">Contacto</a></li>
+          <li><a href="listas.html">Lista de Deseos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Contenido principal-->
+    <main id="Opciones">
+      <!--Tipos de cafes que se venden (lista desordenada)-->
+      <h2>Cafes</h2>
+      <ul>
+        <li>Cappucino</li>
+        <li>Latte</li>
+        <li>Americano</li>
+        <li>Espresso</li>
+      </ul>
+
+      <!--Postres mas vendidos (Lista ordenada)-->
+      <h2>Postres mas vendidos</h2>
+      <ol type="1">
+        <!--Agregue  el atributo numeral, ya que muestra los mas vendidos en escala-->
+        <li>Cheesecake</li>
+        <li>Tiramisu</li>
+        <li>Brownie</li>
+        <li>Macarons</li>
+      </ol>
+
+      <!--Tipos de cafes ingredientes(Listas descriptivas)-->
+      <h2>Ingredientes de los Cafes de el menu</h2>
+      <dl>
+        <dt>Cappucino</dt>
+        <dd>
+          <strong>Bebida de alta calidad </strong> preparada con café espresso,
+          leche caliente y espuma cremosa
+        </dd>
+
+        <dt>Latte</dt>
+        <dd>
+          <strong>Bebida de alta calidad</strong> a base de café espresso y
+          leche vaporizada, con una capa de espuma suave
+        </dd>
+
+        <dt>Americano</dt>
+        <dd>
+          Bebida de alta calidad preparada con<em> café espresso</em> y agua
+          caliente
+        </dd>
+
+        <dt>Espresso</dt>
+        <dd>
+          Bebida de alta calidad <em>de café</em> , servida en pequeñas
+          cantidades
+        </dd>
+      </dl>
+
+      <!--Lista anidada-->
+      <h2>Opciones del menú</h2>
+      <ul>
+        <li>
+          Cafés
+          <ul>
+            <li>Espresso</li>
+            <li>Cappuccino</li>
+            <li>Latte</li>
+          </ul>
+        </li>
+
+        <li>
+          Postres
+          <ul>
+            <li>Cheesecake</li>
+            <li>Brownie</li>
+            <li>Galletas artesanales</li>
+          </ul>
+        </li>
+
+        <li>
+          Bebidas frías
+          <ul>
+            <li>Frappé de café</li>
+            <li>Té helado</li>
+            <li>Limonada natural</li>
+          </ul>
+        </li>
+      </ul>
+    </main>
+
+    <!--Menu productos(columnas y filas de datos)-->
+    <table>
+      <!--Primer elemento dentro de la tabla-->
+      <caption>
+        Menú de productos de La Taza Dorada
+      </caption>
+
+      <!-- Encabezado de la tabla -->
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Disponibilidad</th>
+        </tr>
+      </thead>
+
+      <!-- Contenido de la tabla -->
+      <tbody>
+        <tr>
+          <th scope="row">Cappuccino</th>
+          <td rowspan="2">Café caliente</td>
+          <td>₡2500</td>
+          <td>Disponible</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Latte</th>
+          <td>₡2800</td>
+          <td>Disponible</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Brownie</th>
+          <td>Postre</td>
+          <td>₡1800</td>
+          <td>Disponible</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Cheesecake</th>
+          <td>Postre</td>
+          <td>₡2500</td>
+          <td>Agotado</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Frappé de café</th>
+          <td>Bebida fría</td>
+          <td>₡3000</td>
+          <td>Disponible</td>
+        </tr>
+      </tbody>
+
+      <!-- Pie de la tabla -->
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            Todos nuestros productos son preparados con ingredientes frescos y
+            de alta calidad.
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!--Pie de página-->
+    <footer id="pie">
+      <h3>Contacto</h3>
+
+      <address>
+        <a
+          href="https://maps.app.goo.gl/NpQCwGDfZ4486R2JA"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ubicacion San jose, Costa Rica,av.110</a
+        >
+        <p>Teléfono: +506 2222 2222</p>
+        <a href="mailto:info@latazadorada.com">info@latazadorada.com</a>
+      </address>
+
+      <p>
+        <small
+          >&copy; 2024 La Taza Dorada. Todos los derechos reservados.</small
+        >
+      </p>
+    </footer>
+  </body>
+</html>
