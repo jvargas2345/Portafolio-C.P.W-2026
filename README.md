@@ -148,8 +148,8 @@ Proyecto propio construido de forma autónoma.
 
 | Sesión | Tema                            | Qué aprendí |      Trabajo      |     Captura      |
 | :----: | :------------------------------ | :---------- | :---------------: | :--------------: |
-|  S23   | Viewport y anchos fluidos       |             | [ver](unidad-04/) | [ver](recursos/) |
-|  S24   | Media queries y mobile-first    |             | [ver](unidad-04/) | [ver](recursos/) |
+|  S23   | Viewport y anchos fluidos       | Aprendi sobre viewport      | [ver](./recursos/S24%20MEDIAQUERY.png) | [ver](recursos/) |
+|  S24   | Media queries y mobile-first    |Aprendi sobre queries             | [ver](./recursos/S23-VIEWPORT.png) | [ver](recursos/) |
 |  S25   | Menú responsivo e impresión     |             | [ver](unidad-04/) | [ver](recursos/) |
 |  S26   | Imágenes y video adaptativos    |             | [ver](unidad-04/) | [ver](recursos/) |
 |  S27   | Patrones de diseño adaptativo I |             | [ver](unidad-04/) | [ver](recursos/) |
