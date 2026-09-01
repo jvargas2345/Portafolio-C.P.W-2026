@@ -200,8 +200,8 @@ h1, h2, h3 {
   color: var(--color-marca);
 }
 
-h1 { font-size: 4.8rem; }   /* 48px */
-h2 { font-size: 3.2rem; }   /* 32px */
+h1 { font-size: 3.2rem; }   /* 32px */
+h2 { font-size: 2.4rem; }   /* 24px */
 h3 { font-size: 2.0rem; }   /* 20px */
 /* OJO: Los tamaños guardan PROPORCIÓN entre sí: cada nivel es
    notoriamente más pequeño que el anterior. Elegir números al azar
@@ -250,7 +250,7 @@ img {
      contenedor: sin el max-width de arriba, auto no tendría nada
      que repartir.                                                     */
 
-  padding: var(--esp-xl) var(--esp-md);
+  padding: var(--esp-lg) var(--esp-sm);
   /* Dos valores: el primero es arriba y abajo, el segundo izquierda y
      derecha. El relleno lateral es lo que impide que el texto quede
      pegado al borde de la pantalla en un teléfono.                    */
@@ -321,10 +321,11 @@ img {
 
 .cabecera {
   display: flex;
+  flex-direction: column;
   /* OJO: ACTIVA FLEXBOX. Se declara en el CONTENEDOR, nunca en los hijos.
      Los hijos directos —el logo y la navegación— se convierten en
      "elementos flexibles" y se colocan en fila automáticamente.       */
-
+  gap: var(--esp-sm);
   justify-content: space-between;
   /* Controla el EJE PRINCIPAL, que con la dirección por omisión (fila)
      es el HORIZONTAL.
@@ -340,7 +341,7 @@ img {
      OJO: RECORDAR: si la dirección fuera  column, estos dos ejes se
        INTERCAMBIAN. Es la confusión más común de Flexbox.             */
 
-  padding: var(--esp-sm) var(--esp-md);
+  padding: var(--esp-sm);
   background-color: var(--color-blanco);
   border-bottom: 0.1rem solid var(--color-linea);
 
@@ -464,7 +465,7 @@ img {
   /*  AQUÍ VA LA IMAGEN DE FONDO
      Descomente la línea siguiente cuando coloque el archivo en
      recursos/portada.jpg                                              */
-  background-image: url('../recursos/portada.webp');   /* <- ya activa */
+  background-image: url('/Unidad04-Responsivo/Proyecto-estudio-Luz-clara/recursos/portada.webp');   /* <- ya activa */
 
   background-color: var(--color-marca);
   /* Un color de respaldo, por si la imagen no carga o todavía no se
@@ -521,7 +522,7 @@ img {
      Esta capa oscura es lo que garantiza que el texto blanco se lea
      sobre una fotografía que puede tener zonas claras.                */
 
-  padding: var(--esp-lg);
+  padding: var(--esp-sm);
   border-radius: var(--radio);
   max-width: 70rem;   /* 700px */
 }
@@ -928,7 +929,7 @@ img {
 .cita {
   max-width: 70rem;
   margin: 0 auto;
-  padding: var(--esp-lg);
+  padding: var(--esp-md);
   background-color: var(--color-blanco);
   border-left: 0.5rem solid var(--color-acento);
   /* Solo el borde IZQUIERDO. Es la forma clásica de marcar una cita:
@@ -1944,3 +1945,24 @@ img {
      3. Verificar el contraste en webaim.org/resources/contrastchecker
      4. Recorrer el sitio con la tecla Tab: debe verse siempre dónde
         está el foco */
+@media (min-width: 768px) {
+  .cabecera {
+    flex-direction: row;
+    /*La cabecera de fila a columna*/
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--esp-md);
+  }
+  h1 {font-size: 4.0rem;}
+  h2 {font-size: 2.8rem;}
+
+  .seccion {
+    padding: var(--esp-xl) var(--esp-md);
+  }
+  .portada-caja {
+    padding: var(--esp-lg);
+  }
+  .cita {
+    padding: var(--esp-lg);
+  }
+}
