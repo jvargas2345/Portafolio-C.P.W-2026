@@ -199,7 +199,7 @@ h1, h2, h3 {
      las dos líneas quedan muy separadas.                              */
   color: var(--color-marca);
 }
-
+/*Tamaños movil*/
 h1 { font-size: 3.2rem; }   /* 32px */
 h2 { font-size: 2.4rem; }   /* 24px */
 h3 { font-size: 2.0rem; }   /* 20px */
@@ -465,7 +465,7 @@ img {
   /*  AQUÍ VA LA IMAGEN DE FONDO
      Descomente la línea siguiente cuando coloque el archivo en
      recursos/portada.jpg                                              */
-  background-image: url('/Unidad04-Responsivo/Proyecto-estudio-Luz-clara/recursos/portada.webp');   /* <- ya activa */
+  background-image: url('../recursos/portada.webp');   /* <- ya activa */
 
   background-color: var(--color-marca);
   /* Un color de respaldo, por si la imagen no carga o todavía no se
@@ -1945,6 +1945,8 @@ img {
      3. Verificar el contraste en webaim.org/resources/contrastchecker
      4. Recorrer el sitio con la tecla Tab: debe verse siempre dónde
         está el foco */
+
+  /*Modalidad movil first*/
 @media (min-width: 768px) {
   .cabecera {
     flex-direction: row;
@@ -1966,3 +1968,101 @@ img {
     padding: var(--esp-lg);
   }
 }
+
+/*a partir de los 1024px - vista escritorio*/
+@media (min-width: 1024px) {
+  h1 { font-size: 4.8rem; } /*h1 recupera el tamaño original*/
+
+  .portada { min-height: 55rem; } /*una portada con 50px de alto ocupa casi toda la pantalla de un celular*/
+
+  .seccion { padding: var(--esp-xl) var(--esp-lg); }
+}
+
+/*CUÁNTOS PUNTOS DE QUIEBRE HACEN FALTA
+Para Luz Clara basta con estos dos
+
+  base              hasta 767px             telefono
+  768px              tableta
+  1024px             escritorio*/
+
+  /*CÓMO SE ACUMULAN LAS REGLAS
+  en una pantalla de 1200px se aplican las TRES REGLAS:
+  1. La base 1200px
+  2. la de min-width: 768px (1200 es mayor que 768)
+  3. la de min-width: 1024px (1200 es mayor que 1024) 
+  Donde se repite una propiedad, gana la última.
+  Por eso el orden importa: de menor a mayor.
+  Si la de 1024 estuviera antes de las regla de 768, la última la anularía en pantallas grandes*/
+
+/*LA ESCLA COMPLETA, POR TRAMOS*/
+
+/*BASE - TELEFONO*/
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+body { font-size: 1.6rem; }
+
+/*ESCALA TABLETS*/
+
+@media (min-width: 768px) {
+h1 { font-size: 4.0rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 1.9rem; }
+}
+
+/*ESCALA ESCRITORIO*/
+
+@media (min-width: 1024px) {
+h1 { font-size: 4.8rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.0rem; }
+}
+
+/*LA TABLA DE contacto.html*/
+.tabla-envoltorio { /*despues de lo 360px no hay forma razonable de que una tabla quepa sin perder la relacion entre los datos*/
+  overflow-x: auto;  /*crea su propia barra de desplazamiento*/
+}
+
+@media (max-width: 768px) { /*Se uas  max en luga de min porque em media query ataca la parte movil, e lajsute es solo para movil*/
+  .tabla th,
+  .tabla td {
+    padding: var(--esp-xs);
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  main p { max-width: 65ch; }
+}
+/*en movil no hace falta adaptar texto de los párrafos, la pantalla lo hace. la adptación es pata de tablets hacia arriba por comodidad de lectura*/
+
+/* PUNTOS DE QUIEBRE
+base              hasta 767px             telefono
+  768px              tableta
+  1024px             escritorio*/
+
+  /*TABLETA . a partir de 768px
+  @media (min-width:768) {
+  cabecera e fila
+  títulos más grandes
+  más relleno en las secciones
+  }*/
+
+  /*ESCRITORIO . a partir de 1024px
+  @media (min-width:1024) {
+  títulos a tamaño completo
+  portada más alta
+  }*/
+
+  /*AJUSTES SOLO PARA PANTALLA PEQUEÑA
+  @media (max-width:768) {
+  celdas de la tabla mas compactas 
+  }*/
+
+/*ACCESIBILIDAD DEL MOVIMIENTO
+  @media (prefer-reduce-motion: reduce) {
+  Va siempre al final de todo. Desactivas las animaciones desde el so del disposito en uso. 
+  }*/
+
+  /*Estos encabezados NO son decorativos.
+  Quien abra esta hoja de estilos o usted mismo dentro de 6 meses sepat o tenga una idea de lo que se hizo y de la estrategia que se usó*/
