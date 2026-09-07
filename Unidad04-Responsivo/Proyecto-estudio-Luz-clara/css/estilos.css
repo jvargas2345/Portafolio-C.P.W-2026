@@ -807,6 +807,32 @@ img {
 }
 
 
+/*Panel fiera de la pantalla. Patron off canvas*/
+.panel-control{
+  position: absolute;
+  opacity: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+}
+
+.panel-lateral{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color:var(--color-blanco);
+  box-shadow: var(--sombra-3);
+  padding: var(--esp-lg) var(--esp-md);
+  z-index: 200;
+  transform: translatex(-100%);/*Aqui vive afuera de la pantalla y se desplaza 100 de su propio ancho hacia la izquierda*/
+  overflow-y: auto;
+
+}
+
+
+
+
+
 /* 8 · EQUIPO · CSS GRID           tema de la S17 */
 
 .rejilla-equipo {
@@ -1438,6 +1464,9 @@ Tope para pantalla grande*/
     /*La imagen cambia de lado, sin encoger o bajar*/
   }
 }
+
+
+
 
 
 
