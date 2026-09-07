@@ -903,7 +903,15 @@ img {
   text-align: center;
   font-style: italic;
 }
+/*Base.telefono. una columna. layout shifter*/
+#historia .dos-columnas{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'imagen''texto';
+  gap:var(--esp-md)
+  /*En movil la imagen va arriba. una imagen o una foto captan la atencion y situa el contenido antes de leer */
 
+}
 
 /* 10 · LISTAS Y GLOSARIO           tema de la S14 */
 
@@ -1043,10 +1051,45 @@ img {
     padding: var(--esp-lg);
     .cita-texto{font-size: 2.2rem;}
     
+  }}
+
+  /*Mostly fluid a .mosaico en galeria.html */
+  /*Ajutes para telefono */
+  @media(max-width: 600px){}
+  .mosaico{
+    grid-template-columns: 1fr;
+    /*Una sola columna de 360px, dos columnas de 180px las fotos dejan de apreciarse */
+    grid-auto-rows: 24rem;
   }
-
-
+  .pieza-ancha, .pieza-alta, .pieza-grande{
+    grid-column: auto;
+    grid-row: auto;
+    /*Adaptar mosaico con piezas de distinto tamaño*/
+  }
 }
+
+/*Mostly Fluid a .mosaico en galeria.html
+Tope para pantalla grande*/
+@media(min-width: 1400px){
+  .mosaico{
+    max-width: 130rem;
+    margin-left: auto;
+    margin-right: auto;
+    /*Este patron no solo se encoge , tambien se detiene.*/
+
+  }
+}
+/*Patron Colum Drip en zonas de columnas-tarjetas de index.html*/
+@media(min-width:620px) and (max-width:900px){
+  .tarjeta{
+    flex: 1 1 calc(50% - var(--esp-md));
+    /*Fuerza a dos linea calc(). permite mezclar unidades 50% del contenedor menos el hueco*/
+
+  }
+  
+}
+
+
 
 
 
@@ -1377,6 +1420,23 @@ img {
   font-size: 1.3rem;
   opacity: 0.7;
   margin-bottom: 0;
+}
+
+/*base . table. dos columnas. Layout shifter. Imagen a la derecha*/
+@media(min-width:768px){
+  #historia .dos-columnas{
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 'texto imagen';
+  }
+}
+
+/*Base. Escritorio, Layout shifter, Imagen a la izquierda*/
+@media(min-width:1200px){
+  #historia .dos-columnas{
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: 'imagen texto';
+    /*La imagen cambia de lado, sin encoger o bajar*/
+  }
 }
 
 
