@@ -589,6 +589,37 @@ img {
   font-size: 1.8rem;
   margin-bottom: var(--esp-md);
 }
+.video-envoltorio {
+  width: 100%;
+  max-width: 96rem;
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 9;
+  /* Mantiene la proporción sin importar el ancho de la pantalla.
+     La altura se calcula sola a partir del ancho disponible.
+     Antes de que existiera esta propiedad, conseguirlo requería un
+     truco con relleno en porcentaje que costaba explicar.            */
+
+  background-color: var(--color-tinta);
+  /* Color de respaldo mientras el video carga. Sin esto se ve un
+     hueco transparente que parece un error.                          */
+
+  border-radius: var(--radio);
+  overflow: hidden;
+  /* Recorta las esquinas del video para que sigan el redondeado del
+     envoltorio.                                                      */
+
+  box-shadow: var(--sombra-2);
+}
+
+.video-envoltorio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Igual que con las imágenes: RECORTA en vez de DEFORMAR si la
+     proporción del archivo no coincide con la del envoltorio.        */
+  display: block;
+}
 
 
 /* 6 · SERVICIOS · FLEXBOX           tema de la S16
@@ -824,77 +855,6 @@ img {
      desde abajo.                                                      */
 }
 
-
-/*Panel fiera de la pantalla. Patron off canvas*/
-.panel-control{
-  position: absolute;
-  opacity: 0;
-  width: 0.1rem;
-  height: 0.1rem;
-}
-
-.panel-lateral{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color:var(--color-blanco);
-  box-shadow: var(--sombra-3);
-  padding: var(--esp-lg) var(--esp-md);
-  z-index: 200;
-  transform: translatex(-100%);/*Aqui vive afuera de la pantalla y se desplaza 100 de su propio ancho hacia la izquierda*/
-  overflow-y: auto;
-
-}
-
-/*Hacer que el panel se deslice*/
-.panel-lateral{
-  transform: translatex(-100%);
-  transition: transform 0.3 ease;
-
-}
-/*Abierto cuando la casilla este marcada*/
-.panel-control:checked ~ .panel-lateral{
-  transform: translateX(0);
-  /*Vuelve a su posicion entre deslizandose desde la izquierda*/
-
-  .panel-control:checked ~ .panel-lateral::before{
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 28rem;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.45);
-    z-index: -1;/*Oscurese el resto de la pagina mientras el panel esta abierto*/
-  }}
-/*El boton y el cierre*/
-.panel-boton, .panel-cerrar{
-  display: initial;
-  padding: var(--esp-xs) var(--color-marca);
-  color:var(--color-blanco);
-  border-radius: var(--radio);
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1.4rem;
-  
-}
-
-.panel-cerrar{
-  margin-top: var(--esp-md);
-  background-color: var(--color-fondo-alt);
-  color: var(--color-tinta);
-
-}
-
-.panel-boton:focus-within,
-.panel-cerrar:focus-within{
-  outline: 0,2rem solid var(--color-acento);
-  outline-offset: 0.2rem;
-
-}
-
-
 /*Panel fuera de la pantalla. Patrón Off canvas*/
 .panel-control {
   position: absolute;
@@ -1082,6 +1042,18 @@ img {
   font-style: italic;
 }
 
+/*base . teléfono. una columna. Layout Shifter*/
+#historia .dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'imagen'
+                       'texto';
+  gap: var(--esp-md);
+  /*en movil la imagen va arriba. Una foto capta la atención y situa el contenido antes de leer*/
+}
+
+#historia .columna-imagen {grid-area: imagen;}
+#historia .columna-texto {grid-area: texto;}
 
 /* 10 · LISTAS Y GLOSARIO           tema de la S14 */
 
@@ -1187,7 +1159,12 @@ img {
   font-size: 1.4rem;
   text-align: right;
 }
-
+ /*Pequeños cambios para base teléfono*/
+#testimonio p,
+.cita-texto {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
 
 /* 12 · TABLA           tema de la S18
 
@@ -1533,57 +1510,7 @@ Son las 5 formas en  que un diseño puede reorganizarse al cambiar el ancho.
 
 
 
-/*base . table. dos columnas. Layout shifter. Imagen a la derecha*/
-@media(min-width:768px){
-  #historia .dos-columnas{
-    grid-template-columns: 3fr 2fr;
-    grid-template-areas: 'texto imagen';
-  }
-}
 
-/*Base. Escritorio, Layout shifter, Imagen a la izquierda*/
-@media(min-width:1200px){
-  #historia .dos-columnas{
-    grid-template-columns: 2fr 3fr;
-    grid-template-areas: 'imagen texto';
-    /*La imagen cambia de lado, sin encoger o bajar*/
-  }
-}
-
-
-
-
-
-
-/*LOS CINCO PATRONES
-Son las 5 formas en que un diseño puede reorganizarse al cambiar el ancho 
-
-1. Mostly Fluid. Una rejilla que se encoge y, al llegar al minimo sus elementos bajan de linea. En pantalla grande se detiene y se centra
-
-2. Column Drop. columnas que se apilan una debajo de la otra al angostar. Lo hace flex-wrap: wrap.
-
-3.Layout Shifter. Las zonas de posicion , no solo de tamaño. Se resuelve con grid.
-
-4.Tiny Tweaks. Solo ajusta a tamaños y espacios, para contenido de una sola columna.
-
-5.Off Canvas. Contenido que vive fuera de la pantalla y entra al pedirlo. Por ejemplo el menu de hamburguesa
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 /* 16 · MOVIMIENTO           tema de la S19
 
    Hay dos formas de producir movimiento en CSS:
@@ -2312,18 +2239,6 @@ h3 { font-size: 2.0rem; }
 @media (min-width:768px) {
   main p { max-width: 65ch; }
 }
-
-
-
-/*Ajuste de pantalla pequeños de video */
-@media (max-width: 767px) {
-  .video-envoltorio {
-    border-radius: 0;
-    /* En un teléfono el video ocupa casi todo el ancho: las esquinas
-       redondeadas dejan franjas del fondo que se ven como un error
-       de encuadre.                                                   */
-  }
-
 /*en movil no hace falta adaptar texto de los párrafos, la pantalla lo hace. la adptación es pata de tablets hacia arriba por comodidad de lectura*/
 
 /* PUNTOS DE QUIEBRE
