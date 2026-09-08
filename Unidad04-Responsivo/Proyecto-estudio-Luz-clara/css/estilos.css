@@ -589,6 +589,37 @@ img {
   font-size: 1.8rem;
   margin-bottom: var(--esp-md);
 }
+.video-envoltorio {
+  width: 100%;
+  max-width: 96rem;
+  margin: 0 auto;
+
+  aspect-ratio: 16 / 9;
+  /* Mantiene la proporción sin importar el ancho de la pantalla.
+     La altura se calcula sola a partir del ancho disponible.
+     Antes de que existiera esta propiedad, conseguirlo requería un
+     truco con relleno en porcentaje que costaba explicar.            */
+
+  background-color: var(--color-tinta);
+  /* Color de respaldo mientras el video carga. Sin esto se ve un
+     hueco transparente que parece un error.                          */
+
+  border-radius: var(--radio);
+  overflow: hidden;
+  /* Recorta las esquinas del video para que sigan el redondeado del
+     envoltorio.                                                      */
+
+  box-shadow: var(--sombra-2);
+}
+
+.video-envoltorio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Igual que con las imágenes: RECORTA en vez de DEFORMAR si la
+     proporción del archivo no coincide con la del envoltorio.        */
+  display: block;
+}
 
 
 /* 6 · SERVICIOS · FLEXBOX           tema de la S16
@@ -824,6 +855,95 @@ img {
      desde abajo.                                                      */
 }
 
+/*Panel fuera de la pantalla. Patrón Off canvas*/
+.panel-control {
+  position: absolute;
+  opacity: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+}
+
+.panel-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28rem;/*faltó*/
+  height: 100vh;
+  background-color: var(--color-blanco);
+  box-shadow: var(--sombra-3);
+  padding: var(--esp-lg) var(--esp-md);
+  z-index: 200;
+  transform: translateX(-100%);/*aqui vive furra de la pantalla y se deasplaza 100 de su propio ancho hacia la izquierda*/
+  overflow-y:auto;
+}
+
+/*Hacer que el panel se deslice*/
+.panel-lateral {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+/*Abierto cunado la casilla esta marcada*/
+.panel-control:checked ~ .panel-lateral {
+  transform: translateX(0);
+  /*vuelve a su posición entra deslizandose desd la izquierda*/
+}
+
+/*La capa oscura de fondo-Agregar .panel-fondo*/
+.panel-fondo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  /* Por debajo del panel (200) y por encima de la cabecera (100) */
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+  /* No se usa display: none porque no se puede animar */
+}
+
+.panel-control:checked ~ .panel-fondo {
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.panel-control:checked ~ .panel-lateral::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 28rem;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: -1; /*oscurece el resto de la página mientras el panel esta abierto*/
+}
+
+/*El boton  yel cierre*/
+.panel-boton,
+.panel-cerrar {
+  display: inline-block;
+  padding: var(--esp-xs) var(--esp-md);
+  background-color: var(--color-marca);
+  color: var(--color-blanco);
+  border-radius: var(--radio);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.panel-cerrar {
+  margin-top: var(--esp-md);
+  background-color: var(--color-fondo-alt);
+  color: var(--color-tinta);
+}
+
+.panel-boton:focus-within,
+.panel-cerrar:focus-within {
+  outline: 0.2rem solid var(--color-acento);
+  outline-offset: 0.2rem;
+}
 
 /* 8 · EQUIPO · CSS GRID           tema de la S17 */
 
@@ -922,6 +1042,18 @@ img {
   font-style: italic;
 }
 
+/*base . teléfono. una columna. Layout Shifter*/
+#historia .dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'imagen'
+                       'texto';
+  gap: var(--esp-md);
+  /*en movil la imagen va arriba. Una foto capta la atención y situa el contenido antes de leer*/
+}
+
+#historia .columna-imagen {grid-area: imagen;}
+#historia .columna-texto {grid-area: texto;}
 
 /* 10 · LISTAS Y GLOSARIO           tema de la S14 */
 
@@ -1027,7 +1159,12 @@ img {
   font-size: 1.4rem;
   text-align: right;
 }
-
+ /*Pequeños cambios para base teléfono*/
+#testimonio p,
+.cita-texto {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
 
 /* 12 · TABLA           tema de la S18
 
@@ -1358,6 +1495,21 @@ img {
   margin-bottom: 0;
 }
 
+/*LOS CINCO PATRONES.
+Son las 5 formas en  que un diseño puede reorganizarse al cambiar el ancho.
+
+1. Mostly Fluid. Una rejilla que se encoge y, al llegar al mínimo sus elementos bajan de linea. En pantalla grande se detiene y se centra.
+
+2. Column Drop. columnas que se apilan una debajo de la otra al angostar. Lo hace flex-wrap: wrap.
+
+3. Layout Shifter. Las zonas de posición, no solo de tamaño. Se resuelve con grid.
+
+4. Tiny Tweaks. Solo ajustan tamaños y espacios, para contenido de una sola columna.
+
+5. Off Canvas. Contenido que vive fuera de la pantalla y entra al pedirlo. Por ejemplo en menú hamburgueza*/
+
+
+
 
 /* 16 · MOVIMIENTO           tema de la S19
 
@@ -1372,6 +1524,7 @@ img {
 .ficha:hover {
   transform: translateY(-0.6rem);
   box-shadow: var(--sombra-3);
+
   /* Dos cambios que van juntos: el elemento sube Y su sombra crece.
      Si solo subiera, se vería como un salto; si solo creciera la
      sombra, se vería como un parpadeo. Juntos producen la sensación de
@@ -2160,6 +2313,94 @@ Aplicar reglas según si el dispositivo esta en vertical u horizontal*/
   .portada-titulo { font-size: 2.4rem;}
   .portada-bajada { font-size: 1.5rem;}
 } 
+/*Ajustes de pantalla pequeña de video*/
+@media (max-width: 767px) {
+  .video-envoltorio {
+    border-radius: 0;
+    /* En un teléfono el video ocupa casi todo el ancho: las esquinas
+       redondeadas dejan franjas del fondo que se ven como un error
+       de encuadre.                                                   */
+  }
+}
+
+/*Pequeños cambios para base tableta*/
+@media (min-width: 768px) {
+  #testimonio p {
+    font-size: 1.7rem;
+    max-width: 65ch;
+    /*El limite en la linea aparece despues de tableta*/
+  }
+  .cita {padding: var(--esp-lg);}
+  .cita-texto {font-size: 2.0rem;}
+}
+
+/*Pequeños cambios para base escritorio*/
+@media (min-width: 1024px) {
+  #testimonio p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    /*El limite en la linea aparece despues de escritorio*/
+  }
+  .cita-texto {font-size: 2.2rem;}
+}
+
+/*Mostly Fluid a .mosaico en galeria.html*/
+/*Ajustes para teléfono*/
+@media (max-width: 600px) {
+  .mosaico {
+    grid-template-columns: 1fr;
+    /*una sola columna de 360px, dos columnas de 180px las  fotos dejan de apreciarse*/
+    grid-auto-rows: 24rem;
+  }
+  .pieza-ancha,
+  .pieza-alta,
+  .pieza-grande {
+    grid-column: auto;
+    grid-row: auto;
+    /*Adaptar mosaico con piezas de distinto tamaño*/
+  }
+}
+
+/*Mostly Fluid a .mosaico en galeria.html*/
+/*Tope para pantalla grande*/
+@media (min-width: 1400px){
+  .mosaico {
+    max-width: 130rem;
+    margin-left: auto;
+    margin-right: auto;
+    /*Este patron no solo se encoge, también se detiene.*/
+  }
+}
+
+/*Patron Column Drop en zonas de columnas-tarjetas de index.html*/
+@media (min-width: 620px) and (max-width: 900px) {
+  .tarjeta {
+    flex: 1 1 calc(50% - var(--esp-md));
+    /*fuerza a dos por linea
+    calc(). permite mezclar unidades 50% del contenedor menos el hueco */
+  }
+  .tarjeta:last-child {
+    flex-basis: 100%;
+    /*la tercera tarjeta ocupa el ancho completo. Es una decision estética porque se ve mejor una tarjeta ancha que agosta y sola*/
+  }
+}
+
+/*base . tableta. dos columna. Layout Shifter. Imagen a la derecha*/
+@media (min-width: 768px) {
+  #historia .dos-columnas {
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 'texto imagen';
+  }
+}
+
+/*base . escritorio. Layout Shifter. Imagen a la izquierda*/
+@media (min-width: 1200px) {
+  #historia .dos-columnas {
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: 'imagen texto';
+    /*La imagen cambia de lado, sin encoger o bajar*/
+  }
+}
 
 /*LAS CONSULTAS DISPONIBLES
 @media (min-width: 768px) ancho mínimo
@@ -2171,6 +2412,7 @@ Aplicar reglas según si el dispositivo esta en vertical u horizontal*/
 @media (prefers-reduced-motion) preferencia de movimeinto
 @media (prefers-color-scheme: dark) tema oscuro
 */
+
 @media print {
   /*QUITAR LO QUE NO SIRVE EN EL PAPEL*/
   .cabecera,
@@ -2213,4 +2455,14 @@ main a[href^="http"]::after {
   color: #555;
 }
 }
+
+@media print {
+  .video-envoltorio {
+    display: none;
+  }
+  /* Un video en papel no sirve: no se puede reproducir. Si se quiere
+     dejar constancia de que existe, se puede sustituir por su imagen
+     de portada en lugar de ocultarlo.                                */
+}
+
 
