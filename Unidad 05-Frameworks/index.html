@@ -13,9 +13,10 @@
   <link rel="icon" href="recursos/favicon.png" type="image/png">
 
   <!--Cdn bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="estilos/bootstrap.min.css">
+  <link rel="stylesheet" href="estilos/bootstrap.min.css">
 
 
   <link rel="stylesheet" href="estilos/estilos.css">
@@ -25,10 +26,9 @@
 
   <header id="cabecera" class="cabecera">
     <a href="index.html" class="marca">
-      <svg class="marca-icono" width="36" height="36" viewBox="0 0 36 36"
-           xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Logo del Centro de Yoga Raíz: una hoja">
-        <path d="M18 4 C8 8 6 20 12 30 C14 22 22 18 28 10 C22 10 18 8 18 4 Z" fill="currentColor"/>
+      <svg class="marca-icono" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" role="img"
+        aria-label="Logo del Centro de Yoga Raíz: una hoja">
+        <path d="M18 4 C8 8 6 20 12 30 C14 22 22 18 28 10 C22 10 18 8 18 4 Z" fill="currentColor" />
       </svg>
       <span class="marca-texto">Yoga Raíz</span>
     </a>
@@ -57,41 +57,47 @@
 
     <section id="servicios" class="seccion">
       <h2 class="seccion-titulo">Lo que ofrecemos</h2>
-      <p class="seccion-entrada">
-        Grupos reducidos, atención personalizada y un espacio pensado para
-        el silencio.
-      </p>
+      <!--Uso de framework--boostrap-->
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <p class="seccion-entrada">
+              Grupos reducidos, atención personalizada y un espacio pensado para
+              el silencio.
+            </p>
 
-      <div class="fila-tarjetas">
+            <div class="fila-tarjetas">
 
-        <article class="tarjeta">
-          <h3 class="tarjeta-titulo">Hatha yoga</h3>
-          <p class="tarjeta-texto">
-            Posturas de base y trabajo de respiración, a un ritmo pausado.
-            Apto para principiantes.
-          </p>
-          <p class="tarjeta-precio">Desde ₡8 000 la clase</p>
-        </article>
+              <article class="tarjeta">
+                <h3 class="tarjeta-titulo">Hatha yoga</h3>
+                <p class="tarjeta-texto">
+                  Posturas de base y trabajo de respiración, a un ritmo pausado.
+                  Apto para principiantes.
+                </p>
+                <p class="tarjeta-precio">Desde ₡8 000 la clase</p>
+              </article>
 
-        <article class="tarjeta">
-          <h3 class="tarjeta-titulo">Vinyasa flow</h3>
-          <p class="tarjeta-texto">
-            Secuencias dinámicas encadenadas con la respiración. Requiere
-            experiencia previa.
-          </p>
-          <p class="tarjeta-precio">Desde ₡9 000 la clase</p>
-        </article>
+              <article class="tarjeta">
+                <h3 class="tarjeta-titulo">Vinyasa flow</h3>
+                <p class="tarjeta-texto">
+                  Secuencias dinámicas encadenadas con la respiración. Requiere
+                  experiencia previa.
+                </p>
+                <p class="tarjeta-precio">Desde ₡9 000 la clase</p>
+              </article>
 
-        <article class="tarjeta">
-          <h3 class="tarjeta-titulo">Meditación guiada</h3>
-          <p class="tarjeta-texto">
-            Sesiones de treinta minutos, sentados, con acompañamiento de
-            un facilitador.
-          </p>
-          <p class="tarjeta-precio">Desde ₡5 000 la sesión</p>
-        </article>
-
-      </div>
+              <article class="tarjeta">
+                <h3 class="tarjeta-titulo">Meditación guiada</h3>
+                <p class="tarjeta-texto">
+                  Sesiones de treinta minutos, sentados, con acompañamiento de
+                  un facilitador.
+                </p>
+                <p class="tarjeta-precio">Desde ₡5 000 la sesión</p>
+              </article>
+            </div>
+          </div>
+          <div>
+          </div><!--Cierre container-->
     </section>
 
     <section id="testimonio" class="seccion seccion-alterna">
@@ -129,7 +135,9 @@
 
   <!--BOOSTRAP SCRIPT-->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 
   <script src="js/bootstrap.bundle.min.js"></script>
